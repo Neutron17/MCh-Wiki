@@ -2,7 +2,7 @@ import Poem, {ExtendedPoem} from "./poem";
 import SideBar, {poemVerses} from "./PoemSideBar";
 import React from "react";
 
-function extendPoem(p: Poem) {
+export function extendPoem(p: Poem) {
     const ep: ExtendedPoem = {
         title: p.title,
         verses: p.verses,
