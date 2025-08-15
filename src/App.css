@@ -25,11 +25,14 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    @apply text-blue-600
 }
 
 .App-title {
     font-size: calc(69px + 2vmin);
+    /*font-family: "JetBrains Mono ExtraBold", monospace;*/
+    font-family: Oswald, sans-serif;
 }
 
 .App-link {

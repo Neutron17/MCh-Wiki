@@ -11,7 +11,7 @@ class Home extends React.Component {
                     <p className="App-title">
                         Csokonay Witéz Misi
                     </p><br/>
-                    <p className={"text-gray-200"}><i>"A magyar felvilágosodáskori irodalom egyik legjelentősebb költője.<br/>Tanárai a jövő tudósaként emlegették."</i></p>
+                    <p className={"text-blue-200"}><i>"A magyar felvilágosodáskori irodalom egyik legjelentősebb költője.<br/>Tanárai a jövő tudósaként emlegették."</i></p>
                 </header>
             </div>
         );
