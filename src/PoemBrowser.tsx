@@ -15,9 +15,9 @@ export default class EveryPoem extends React.Component {
             <div className={"flex flex-wrap p-8 justify-center gap-16"}>
                 <Category link={"/best"} title={"CsWM Best Of"} description={"Válogatott CsWM versek"} img={cswm}/>
                 <Category link={"/poems"} title={"Összes CsWM Vers"} description={"Összes CsWM vers, hányás veszély!"} img={uv1}/>
-                <Category link={"poemsearch"} title={"CsWM Vers kereső"} description={"Összes CsWM vers, hányás veszély!"} img={uv2}/>
-                <Category link={"mch1"} title={"Magna Charybdis I"} description={"Nagy Charybdis kalandjai"} img={mch}/>
-                <Category link={"mch2"} title={"Magna Charybdis II"} description={"Nagy Charybdis kalandjai, immár Schibzi társaságában"} img={mch2}/>
+                <Category link={"/poemsearch"} title={"CsWM Vers kereső"} description={"CsWM versek cím alapján (hányás veszély!)"} img={uv2}/>
+                <Category link={"/mch1"} title={"Magna Charybdis I"} description={"Nagy Charybdis kalandjai"} img={mch}/>
+                <Category link={"/mch2"} title={"Magna Charybdis II"} description={"Nagy Charybdis kalandjai, immár Schibzi társaságában"} img={mch2}/>
             </div>
         </>;
     }

@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import Poem, {allPoems, ExtendedPoem} from "./poem";
 
 interface SideBarProps {
-    poems: Poem[]
+    poems: Poem[] | ExtendedPoem[];
 }
 
 export function poemVerses(poem: Poem | ExtendedPoem) {

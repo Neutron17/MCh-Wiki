@@ -1,0 +1,66 @@
+import Poem, {ExtendedPoem} from "./poem";
+import SideBar, {poemVerses} from "./PoemSideBar";
+import React from "react";
+
+function extendPoem(p: Poem) {
+    const ep: ExtendedPoem = {
+        title: p.title,
+        verses: p.verses,
+        rating: []
+    }
+    for (let i = 0; i < p.score; i++) {
+        ep.rating.push(
+            <p className={"text-2xl"}>🤮 </p>
+        )
+    }
+    return ep
+}
+
+interface FullPoemProps {
+    title: string,
+    poems: Poem[]
+}
+
+export default function FullPoem(props: FullPoemProps) {
+    return (
+        <>
+            <SideBar poems={props.poems}></SideBar>
+            <div className={"lg:pl-64"} style={{color: 'white'}}>
+                <h1 className="text-7xl"><b>{props.title}</b></h1>
+                <main>
+                    <p><i>Hányóvödör használata ajánlott</i></p>
+                </main>
+                <br/>
+                {props.poems.map((poem) => {
+                    return extendPoem(poem)
+                }).map((item, upperindex) => (
+                    <section key={upperindex} id={String(upperindex)} className="scroll-mt-20">
+                        <div className={"flex items-center justify-center"}>
+                            <h2 className="text-2xl font-bold mb-4">{item.title}</h2>
+                            <div className="flex pb-3 pl-5 gap-1">
+                                {item.rating.map((item, index) => (item))}
+                            </div>
+                        </div>
+                        <p className="text-gray-300">
+                            <div>
+                                {poemVerses(item).map((verse, index) => (
+                                    <span key={index} className="block mb-2">
+                                        {verse.map((item) => (
+                                            <>
+                                                {item.split('\n').map((line, index) => (
+                                                    <span key={index} className="inline-block mr-2">{line}</span>
+                                                ))}
+                                                <br/>
+                                            </>
+                                        ))}
+                                        <br/>
+                                    </span>
+                                ))}
+                            </div>
+                            <br/>
+                        </p>
+                    </section>
+                ))}
+            </div>
+        </>)
+}
