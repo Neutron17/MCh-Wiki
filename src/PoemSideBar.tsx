@@ -1,11 +1,11 @@
 import React, {useState} from "react";
-import Poem, {allPoems} from "./poem";
+import Poem, {allPoems, ExtendedPoem} from "./poem";
 
 interface SideBarProps {
     poems: Poem[]
 }
 
-export function poemVerses(poem: Poem) {
+export function poemVerses(poem: Poem | ExtendedPoem) {
     return poem.verses.map((verse) => {
         return verse.split('\n')
     });

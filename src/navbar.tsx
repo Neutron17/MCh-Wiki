@@ -14,7 +14,7 @@ const Navbar: React.FC = () => {
 
     const tabs = [
         {name:"Kezdőlap", path:"/"},
-        {name:"Versek", path:"/vers"},
+        {name:"Versek", path:"/versek"},
         {name:"Meme", path:"/meme"}
     ];
 

@@ -1,12 +1,25 @@
 import React from 'react';
-import {allPoems} from "./poem";
+import Poem, {allPoems, ExtendedPoem} from "./poem";
 import SideBar, {poemVerses} from "./PoemSideBar";
+import {rating} from "@material-tailwind/react";
 
 const divStyle = {
     color: 'white',
-    display: 'flex',
-    "flex-direction": 'column',
 };
+
+function extendPoem(p: Poem) {
+    const ep: ExtendedPoem = {
+        title: p.title,
+        verses: p.verses,
+        rating: []
+    }
+    for (let i = 0; i < p.score; i++) {
+        ep.rating.push(
+            <p>🤮</p>
+        )
+    }
+    return ep
+}
 
 class Vers extends React.Component {
     render() {
@@ -19,9 +32,14 @@ class Vers extends React.Component {
                         <p><i>Hányóvödör használata ajánlott</i></p>
                     </main>
                     <br/>
-                    {allPoems.map((item, upperindex) => (
+                    {allPoems.map((poem) => { return extendPoem(poem) }).map((item, upperindex) => (
                         <section key={upperindex} id={String(upperindex)} className="scroll-mt-20">
-                            <h2 className="text-2xl font-bold mb-4">{item.title}</h2>
+                            <div className={"flex items-center justify-center"}>
+                                <h2 className="text-2xl font-bold mb-4">{item.title}</h2>
+                                <div className="flex pb-3 pl-5">
+                                    {item.rating.map((item, index) => (item))}
+                                </div>
+                            </div>
                             <p className="text-gray-300">
                                 <div>
                                     {poemVerses(item).map((verse, index) => (
