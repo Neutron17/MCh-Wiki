@@ -1,7 +1,6 @@
 import React from 'react';
 import Poem, {allPoems, ExtendedPoem} from "./poem";
 import SideBar, {poemVerses} from "./PoemSideBar";
-import {rating} from "@material-tailwind/react";
 
 const divStyle = {
     color: 'white',
@@ -15,13 +14,13 @@ function extendPoem(p: Poem) {
     }
     for (let i = 0; i < p.score; i++) {
         ep.rating.push(
-            <p>🤮</p>
+            <p className={"text-2xl"}>🤮 </p>
         )
     }
     return ep
 }
 
-class Vers extends React.Component {
+class EveryPoem extends React.Component {
     render() {
         return (
             <>
@@ -36,7 +35,7 @@ class Vers extends React.Component {
                         <section key={upperindex} id={String(upperindex)} className="scroll-mt-20">
                             <div className={"flex items-center justify-center"}>
                                 <h2 className="text-2xl font-bold mb-4">{item.title}</h2>
-                                <div className="flex pb-3 pl-5">
+                                <div className="flex pb-3 pl-5 gap-1">
                                     {item.rating.map((item, index) => (item))}
                                 </div>
                             </div>
@@ -66,4 +65,4 @@ class Vers extends React.Component {
     }
 }
 
-export default Vers;
+export default EveryPoem;

@@ -5,9 +5,10 @@ import Home from "./Home";
 import About from "./About";
 import ErrPage from "./ErrPage";
 import Navbar from "./navbar";
-import Vers from "./Vers";
+import EveryPoem from "./EveryPoem";
 import Meme from "./Meme";
 import Footer from "./Footer";
+import PoemBrowser from "./PoemBrowser";
 
 function App() {
   return (
@@ -16,7 +17,8 @@ function App() {
         <div className="pt-16">
             <Routes>
                 <Route path={"/"} element={<Home></Home>}></Route>
-                <Route path="/versek" element={<Vers></Vers>}></Route>
+                <Route path="/poembrowser" element={<PoemBrowser></PoemBrowser>}></Route>
+                <Route path="/poems" element={<EveryPoem></EveryPoem>}></Route>
                 <Route path="/meme" element={<Meme></Meme>}></Route>
                 <Route path="/about" element={<About></About>}></Route>
                 <Route path="*" element={<ErrPage />} />

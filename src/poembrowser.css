@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.category-container {
+    justify-content: left;
+    @apply max-w-72 flex-grow
+}
+.category-container p {
+    @apply text-left p-2
+}
+
+.category {
+    @apply bg-gray-500 rounded-lg
+}
+.category:hover {
+    @apply bg-gray-600
+}
+
+.category h1 {
+    @apply text-2xl font-bold text-white text-nowrap
+}
+
+.category p {
+    @apply text-white text-sm italic text-wrap
+}
+
+.category-container img {
+    @apply w-full max-h-fit rounded-b-lg self-stretch max-h-64
+}
